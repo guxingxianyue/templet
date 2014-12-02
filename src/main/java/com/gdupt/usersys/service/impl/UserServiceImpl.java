@@ -1,7 +1,10 @@
 package com.gdupt.usersys.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.gdupt.usersys.dao.UserMapper;
 import com.gdupt.usersys.entity.User;
 import com.gdupt.usersys.service.IUserService;
@@ -22,6 +25,10 @@ public class UserServiceImpl implements IUserService{
 
 	public User getUserById(int id) {
 		return userMapper.selectByPrimaryKey(id);
+	}
+
+	public List<User> getAllUsers() {
+		return userMapper.selectAll();
 	}
 
 }

@@ -1,9 +1,15 @@
 package com.gdupt.usersys.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import com.gdupt.usersys.entity.User;
 import com.gdupt.usersys.service.IUserService;
 
@@ -22,11 +28,19 @@ public class UserController {
 		this.userService = userService;
 	}
 
-	@RequestMapping("/show")
-	public String showUser(int id,HttpServletRequest request) {
+	@RequestMapping("{id}")
+	public String showUser(@PathVariable int id,HttpServletRequest request) {
 		User user=userService.getUserById(id);
 		request.setAttribute("user",user);
 		return "user_view";
+	}
+	
+	@RequestMapping("/all")
+	public String showAllUsers(Model model){
+		List<User> users=userService.getAllUsers();
+		model.addAttribute("users", users);
+		return "user_list";
+		
 	}
 
 }
