@@ -27,6 +27,9 @@ public class TestJunit {
 		userService=(IUserService) ac.getBean("UserService");
 	}
 	
+	/**
+	 * 测试方法，用Junit测试，步骤：鼠标移到@Test上---右键---Run As---Junit Test
+	 */
 	@Test
 	public void test() {
 		User user=userService.getUserById(1);

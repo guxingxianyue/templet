@@ -18,6 +18,10 @@ import com.gdupt.usersys.service.IUserService;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:spring-context.xml","classpath:spring-mybatis.xml","classpath:spring-mvc.xml"})
 public class TestSpringTest {
+	
+	/**
+	 * 使用spring注解自动注入依赖
+	 */
 	@Autowired
 	private IUserService userService;
 	
@@ -29,6 +33,9 @@ public class TestSpringTest {
 		this.userService = userService;
 	}
 	
+	/**
+	 * 测试方法，用Junit测试，步骤：鼠标移到@Test上---右键---Run As---Junit Test
+	 */
 	@Test
 	public void test() {
 		User user=userService.getUserById(1);
