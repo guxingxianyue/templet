@@ -12,6 +12,24 @@ public class User {
     private String phone;
 
     private String remark;
+    
+    /**
+     * 无参构造方法
+     */
+    public User() {
+    	
+	}
+    
+    /**
+     * 参数为用户名name和密码password的构造方法
+     * 主要用来登陆验证
+     * @param name 用户名
+     * @param password 密码
+     */
+    public User(String name,String password){
+    	this.name=name;
+    	this.password=password;
+    }
 
     public Integer getId() {
         return id;

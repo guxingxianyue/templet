@@ -31,4 +31,10 @@ public class UserServiceImpl implements IUserService{
 		return userMapper.selectAll();
 	}
 
+	public User findUser(String name, String password) {
+		User user=new User(name,password);
+		userMapper.getUserByNamePwd(user);
+		return user;
+	}
+
 }

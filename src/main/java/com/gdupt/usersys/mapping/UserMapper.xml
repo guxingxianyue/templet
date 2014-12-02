@@ -19,6 +19,14 @@
     where id = #{id,jdbcType=INTEGER}
   </select>
   
+  <!--  -->
+  <select id="getUserByNamePwd" resultMap="BaseResultMap" parameterType="com.gdupt.usersys.entity.User" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where name = #{name,jdbcType=VARCHAR} and password =#{password,jdbcType=VARCHAR}
+  </select>
+  
   <!-- 查询所有用户记录 -->
   <select id="selectAll" resultMap="BaseResultMap" >
     select 
