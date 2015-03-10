@@ -1,7 +1,6 @@
 package com.gdupt.usersys.dao;
 
 import java.util.List;
-
 import com.gdupt.usersys.entity.User;
 
 public interface UserMapper {
