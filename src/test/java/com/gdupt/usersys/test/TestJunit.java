@@ -24,7 +24,7 @@ public class TestJunit {
 	@Before
 	public void init() {
 		ac=new ClassPathXmlApplicationContext(new String[]{"spring-context.xml","spring-mybatis.xml","spring-mvc.xml"});
-		userService=(IUserService) ac.getBean("UserService");
+		ac=new ClassPathXmlApplicationContext();
 	}
 	
 	/**
@@ -34,6 +34,12 @@ public class TestJunit {
 	public void test() {
 		User user=userService.getUserById(1);
 		System.out.println(user.getName());
+	}
+	
+	@Test
+	public void tt() {
+		// TODO Auto-generated method stub
+		System.out.println(System.getProperty("user.dir"));
 	}
 
 }
